@@ -2,7 +2,7 @@
 Version: 0.1-SNAPSHOT
 ---
 
-# Template - Semantic Versioning with Github
+# Example - CII 100%
 <!-- Find More Badges Here: https://shields.io/ -->
 
 [![GitHub License](https://img.shields.io/github/license/devlinjunker/example.cii?color=blue)](https://github.com/devlinjunker/example.cii/blob/develop/LICENSE)  
