@@ -16,11 +16,16 @@ Version: 0.1-SNAPSHOT
 ## Intro
 <!-- Quick Description, could match Github repo description or have a little more info-->
 
-This is an example project with 100% Passing [Core Infrastructure Criteria]. 
+This is an example project with 100% Passing [Core Infrastructure Initiative Criteria]. 
 
 It is based off of:
-- Basic Documentation File Templates (from [Github :100:% Docs Template](https://github.com/devlinjunker/template.github.docs) )
-- Template [Github Semver Project]
+- Template [Github Semver Project](https://github.com/devlinjunker/template.github.semver)
+
+<!-- 
+With improvements:
+- Static Code Analysis (Linting)
+- Automated Test Suite
+-->
 
 
 ## Dependencies/Frameworks
@@ -34,7 +39,8 @@ It is based off of:
 
 ## Quick Setup/Run
 <!-- This section should try to quickly explain how to setup the project and start using it (server/app/demo/template) - ideally in list format -->
- - [ ] Review the [Wiki] - overview of the concepts
+ 
+ <!-- - [ ] Review the [Wiki] - overview of the concepts -->
  - [ ] [Clone or Template to New Project][Contributing Guide]
  - [ ] Review/Update [License] File
  - [ ] Review/Update [Security Policy]
@@ -63,8 +69,9 @@ It is based off of:
 [Security Policy]: SECURITY.md
 [Code of Conduct]: CODE_OF_CONDUCT.md
 [Contributing Guide]: CONTRIBUTING.md
-[Core Infrastructure Initiative Criteria]: https://bestpractices.coreinfrastructure.org/en/criteria/0
 [Git Hooks]: scripts/hooks#git-hook-scripts
+[Github Workflows]: .github/workflows#github-workflows
+[Core Infrastructure Initiative Criteria]: https://bestpractices.coreinfrastructure.org/en/criteria/0
 [Bash]: https://tldp.org/LDP/abs/html/
 [Github Actions]: https://docs.github.com/en/free-pro-team@latest/actions
 [Bulldozer]: https://github.com/palantir/bulldozer
