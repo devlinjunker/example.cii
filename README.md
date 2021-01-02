@@ -31,9 +31,6 @@ With improvements:
 ## Dependencies/Frameworks
 <!-- List the frameworks, libraries, and tools the project uses: -->
 
-- Git - to clone and trigger [Git Hooks]
-- [Bash] - to run scripts during Git Hooks (for process enforcement)
-- GitHub - this template uses [Github Actions] for process enforcement
 - [Bulldozer] - Github Application to Auto Squash and Merge feature PRs
 - [Git-mkver] - Binary that helps with determining next semantic version based on Git Tags
 
