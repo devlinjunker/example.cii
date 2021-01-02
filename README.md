@@ -16,7 +16,7 @@ Version: 0.1-SNAPSHOT
 ## Intro
 <!-- Quick Description, could match Github repo description or have a little more info-->
 
-This is an example project with 100% Passing [Core Infrastructure Initiative Criteria]. 
+This is an example project with a goal of 100% Passing [Core Infrastructure Initiative Criteria]. 
 
 It is based off of:
 - Template [Github Semver Project](https://github.com/devlinjunker/template.github.semver)
