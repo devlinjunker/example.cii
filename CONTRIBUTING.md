@@ -11,10 +11,10 @@ The best way to [report an issue is through Github](https://github.com/devlinjun
 <!-- This section details the steps to setup the project for development -->
 
 ### Environment Setup and Tools
-You will need to install Git and create an account on Github to take advantage of all of the features of this template. This template also uses scripts that expect Bash to be installed at `/bin/bash`.
+This example uses scripts that expect Bash to be installed at `/bin/bash`. The rest of the tools should be included when you clone the repo.
 
-#### Create your own Project from this Template
-There are multiple ways to use this template as a starting point for your own project. The **best way to use this is by cloning the repo to your GitHub account and creating your project with the template feature provided by Github**:
+#### Create your own Project from this Example
+There are multiple ways to use this example as a starting point for your own project. The **best way to use this is by cloning the repo to your GitHub account and creating your project with the template feature provided by Github**:
 
 <img width="1130" alt="template" src="https://user-images.githubusercontent.com/1504590/95393957-55b31c80-08b0-11eb-9126-55d8105881f4.png">
 
@@ -52,8 +52,8 @@ git push --set-upstream origin develop
 Once you have a framework and development environment chosen for your project, you should update your repo with specifics about how to install the tools and dependencies needed to run/debug/develop the application (See README for checklist).
 
 
-#### Update a Project or add to existing Project
-The steps **to update a Project that was created using this template**, or to **add these features to an existing project** are the same. In the projects root directory:
+#### Add Bash Testing to your Project
+You can also **add these features to an existing project** by using this template and following these steps:
 ```
 git checkout main;
 git remote add template https://github.com/devlinjunker/example.cii.git;
@@ -66,6 +66,8 @@ git add *;
 git commit;
 git push;
 ```
+
+**Or you can just use this example as an idea for your own projects**
 
 
 ### Folder Structure
@@ -143,11 +145,20 @@ Some ideas of things to include in your styleguide include:
 
 
 #### Testing
-This template doesn't include any tests yet (although we could add them...). Once you start using this for your own project though, you should include any testing details and requirements here.
+This template includes tests for each of the Bash Scripts that help automate the Semantic Versioning process in GitHub Actions and that run during the Git Hooks. Each `.sh` file in the `scripts/` directory should have a corresponding `.bats` file in the `qa/scripts/` directory.
 
-Ideas to consider for testing:
- - unit tests
- - integration tess
+Run every BATS test with:
+```
+lib/bats-core/bin/bats qa/**/*.bats
+```
+
+Run a single BATS test with:
+```
+lib/bats-core/bin/bats <path to .bats file>
+```
+
+Other ideas to consider for testing:
+ - integration tests
  - e2e tests
  - automation tests
  - contract tests
