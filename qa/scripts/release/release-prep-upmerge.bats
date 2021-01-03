@@ -6,6 +6,7 @@ SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/release
 
 TEST_PREFIX="release-prep-upmerge.sh -";
 
-@test "$TEST_PREFIX TODO " {
+@test "$TEST_PREFIX TODO" {
     skip
+    # need to mock git for this
 }

@@ -9,3 +9,8 @@ TEST_PREFIX="collect-wiki.sh -";
 @test "$TEST_PREFIX TODO " {
     skip
 }
+
+# create mock dir?
+# verify number of files?
+# expect wiki/
+# expect wiki/.README-(synced).md

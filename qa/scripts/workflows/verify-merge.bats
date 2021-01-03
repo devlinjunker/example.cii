@@ -6,6 +6,45 @@ SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/workflows
 
 TEST_PREFIX="verify-merge.sh -";
 
-@test "$TEST_PREFIX TODO " {
-    skip
+@test "$TEST_PREFIX should error if BRANCH is not set" {
+    run "$SCRIPT_DIR"/verify-merge.sh
+
+    assert_failure
+}
+
+@test "$TEST_PREFIX should error if BRANCH is 'poc' branch" {
+    BRANCH="poc/test"
+    export BRANCH
+
+    run "$SCRIPT_DIR"/verify-merge.sh
+
+    assert_failure
+}
+
+@test "$TEST_PREFIX should error if last commit is 'wip' " {
+    BRANCH="test"
+    export BRANCH
+
+    function git() {
+        echo "wip: test"
+    }
+    export -f git
+
+    run "$SCRIPT_DIR"/verify-merge.sh
+
+    assert_failure
+}
+
+@test "$TEST_PREFIX should pass if none of above are true" {
+    BRANCH="test"
+    export BRANCH
+
+    function git() {
+        echo "feat: test"
+    }
+    export -f git
+
+    run "$SCRIPT_DIR"/verify-merge.sh
+
+    assert_success
 }
