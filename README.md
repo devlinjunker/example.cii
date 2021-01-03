@@ -16,10 +16,10 @@ Version: 0.2-SNAPSHOT
 ## Intro
 <!-- Quick Description, could match Github repo description or have a little more info-->
 
-This is an example project with a goal of 100% Passing [Core Infrastructure Initiative Criteria]. 
+This is an example project with a goal of 100% passing [Core Infrastructure Initiative Criteria] status. It is based off of the [Github Semver Project](https://github.com/devlinjunker/template.github.semver) Template. 
 
-It is based off of the Template: [Github Semver Project](https://github.com/devlinjunker/template.github.semver). With the following improvements for passing status:
-- Automated Test Suite
+Contains the following improvements for passing status:
+- Automated Test Suite (for Bash Scripts)
 <!--
 - Static Code Analysis (Linting)
 -->
