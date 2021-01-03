@@ -6,14 +6,14 @@ SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/release
 
 TEST_PREFIX="update-versions.sh -";
 
-@test "$TEST_PREFIX should error no arg passed" {
+@test "$TEST_PREFIX should error if no args passed" {
     run "$SCRIPT_DIR"/update-versions.sh
     
     assert_failure
     assert_output --partial 'Error'
 }
 
-@test "$TEST_PREFIX should update version number in README file with arg" {
+@test "$TEST_PREFIX should update version number in README file with argument" {
     # get full path of script
     SCRIPT_PATH=$(dirname "$SCRIPT_DIR"/update-versions.sh)/update-versions.sh
 

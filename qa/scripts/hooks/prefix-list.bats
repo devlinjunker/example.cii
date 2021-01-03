@@ -30,7 +30,7 @@ TEST_PREFIX="prefix-list.sh -";
     assert_output --partial 'abc'
 }
 
-@test "$TEST_PREFIX should use BATS_PREFIX_LIST if set" {
+@test "$TEST_PREFIX should use BATS_PREFIX_LIST if set (for mocking tests)" {
     BATS_PREFIX_LIST='abc 123'
     export BATS_PREFIX_LIST;
 

@@ -6,17 +6,23 @@ SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/hooks
 
 TEST_PREFIX="branch-name.sh -";
 
-@test "$TEST_PREFIX should ignore patch branches" {
+
+@test "$TEST_PREFIX should not allow branches that don't match output of prefix-list.sh or defaults" {
     function git() {
-        echo "patch-0.0.1"
+        echo "abc/test-name";
     }
     export -f git
 
+    BATS_PREFIX_LIST=""
+    export BATS_PREFIX_LIST
+    
     run "$SCRIPT_DIR"/branch-name.sh
-    assert_success
+    unset BATS_PREFIX_LIST
+
+    assert_failure
 }
 
-@test "$TEST_PREFIX should allow default branches" {
+@test "$TEST_PREFIX should allow default branch prefixes (feat, fix)" {
     function git() {
         echo "fix/test-name";
     }
@@ -51,17 +57,12 @@ TEST_PREFIX="branch-name.sh -";
     assert_success
 }
 
-@test "$TEST_PREFIX should not allow branches that don't match output of prefix-list.sh or defaults" {
+@test "$TEST_PREFIX should allow patch branches" {
     function git() {
-        echo "abc/test-name";
+        echo "patch-0.0.1"
     }
     export -f git
 
-    BATS_PREFIX_LIST=""
-    export BATS_PREFIX_LIST
-    
     run "$SCRIPT_DIR"/branch-name.sh
-    unset BATS_PREFIX_LIST
-
-    assert_failure
+    assert_success
 }

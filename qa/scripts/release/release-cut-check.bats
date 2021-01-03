@@ -6,7 +6,7 @@ SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/release
 
 TEST_PREFIX="release-cut-check.sh -";
 
-@test "$TEST_PREFIX should error if find branch matching branch RELEASE_BRANCH" {
+@test "$TEST_PREFIX should error if found branch matching branch RELEASE_BRANCH" {
     RELEASE_BRANCH='abc'
     export RELEASE_BRANCH;
     function git() {

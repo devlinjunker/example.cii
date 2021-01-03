@@ -22,11 +22,6 @@ teardown() {
     rm -rf tmp
 }
 
-@test "$TEST_PREFIX should fail if no CONTRIBUTING or SECURITY file" {
-    run $SCRIPT_PATH
-    
-    assert_failure
-}
 
 @test "$TEST_PREFIX should create wiki/ dir with CONTRIBUTING, SECURITY and home page file" {
     echo "" > CONTRIBUTING.md
@@ -41,6 +36,12 @@ teardown() {
     # expect 3 files (home page + CONTRIBUTING and SECURITY)
     output=$(ls -A1q wiki | wc -l | tr -d ' ')
     assert_equal "$output" "3"
+}
+
+@test "$TEST_PREFIX should fail if no CONTRIBUTING or SECURITY file" {
+    run $SCRIPT_PATH
+    
+    assert_failure
 }
 
 @test "$TEST_PREFIX should include other README files in wiki/ dir" {

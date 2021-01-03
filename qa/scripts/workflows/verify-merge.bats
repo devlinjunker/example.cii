@@ -29,7 +29,7 @@ TEST_PREFIX="verify-merge.sh -";
     assert_failure
 }
 
-@test "$TEST_PREFIX should pass if none of above are true" {
+@test "$TEST_PREFIX should pass if above are NOT true" {
     BRANCH="test"
     export BRANCH
 
