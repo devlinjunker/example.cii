@@ -14,16 +14,18 @@ TEST_PREFIX="branch-match.sh -";
 
     run "$SCRIPT_DIR"/branch-match.sh
 
+    unset BRANCH
     assert_success
 }
 
 @test "$TEST_PREFIX should error if BRANCH does not match REGEXP" {
- BRANCH="-abc"
+    BRANCH="-abc"
     REGEXP="test"
     export BRANCH
     export REGEXP
 
     run "$SCRIPT_DIR"/branch-match.sh
 
+    unset BRANCH
     assert_failure
 }
