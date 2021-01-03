@@ -7,6 +7,3 @@
 [submodule "lib/bats-support"]
 	path = lib/bats-support
 	url = https://github.com/bats-core/bats-support
-[submodule "lib/bats-mock"]
-	path = lib/bats-mock
-	url = https://github.com/jasonkarns/bats-mock

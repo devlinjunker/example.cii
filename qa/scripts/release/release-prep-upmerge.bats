@@ -1,7 +1,6 @@
 #!/usr/bin/env ../../..libs/bats/bin/bats
 load '../../../lib/bats-support/load'
 load '../../../lib/bats-assert/load'
-load '../../../lib/bats-mock/stub'
 
 SCRIPT_DIR="$BATS_TEST_DIRNAME"/../../../scripts/release
 
