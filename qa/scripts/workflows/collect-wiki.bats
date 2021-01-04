@@ -67,7 +67,7 @@ teardown() {
 } 
 
 @test "$TEST_PREFIX should NOT include other markdown files in wiki/ dir" {
-echo "" > CONTRIBUTING.md
+    echo "" > CONTRIBUTING.md
     echo "" > SECURITY.md
     echo "" > TEST.md
 
