@@ -29,3 +29,9 @@ jobs:
       with:
         regex: '-[0-9]+.[0-9]+(.[0-9]+)?'
         allowed_prefixes:  release,patch
+
+    - name: "Verify BATS Tests Pass"
+      run: 'lib/bats-core/bin/bats qa -r'
+
+    - name: "Lint with Shellcheck"
+      run: 'scripts/bin/lint.sh'
