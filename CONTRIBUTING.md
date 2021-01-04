@@ -159,6 +159,8 @@ Run a single BATS test with:
 lib/bats-core/bin/bats <path to .bats file>
 ```
 
+See the [READMEs in `qa/` directory](https://github.com/devlinjunker/example.cii/tree/develop/qa)
+
 
 #### Release 
 This template uses [Semantic Versioning](https://github.com/devlinjunker/template.github.semver/wiki/Release) to label each iteration of the final project. This ensures a consitent and meaningful format for numbering releases. 
