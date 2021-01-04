@@ -20,9 +20,7 @@ This is an example project with a goal of 100% passing [Core Infrastructure Init
 
 Contains the following improvements for passing status:
 - Automated Test Suite (for Bash Scripts)
-<!--
 - Static Code Analysis (Linting)
--->
 
 
 ## Dependencies/Frameworks
