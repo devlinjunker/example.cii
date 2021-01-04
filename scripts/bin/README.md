@@ -7,5 +7,8 @@ This includes:
 ## lint.sh
 - Runs the linting programs to ensure the style guide is met
 
+
 ## test.sh
 - Runs the test files to prevent regressions
+    - run all tests if no arguments are passed (or `-a/--all`)
+    - or will try to find a specific file to run with the `-f/--file` argument
