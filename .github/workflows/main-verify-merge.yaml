@@ -29,4 +29,4 @@ jobs:
         allowed_prefixes:  release,patch
 
     - name: "Verify BATS Tests Pass"
-      run: lib/bats-core/bin/bats qa/**/*.bats
+      run: "lib/bats-core/bin/bats ./qa/*/*.bats"
