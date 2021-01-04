@@ -44,7 +44,7 @@ teardown() {
     assert_failure
 }
 
-@test "$TEST_PREFIX should include other README files in wiki/ dir" {
+@test "$TEST_PREFIX should include other README files in wiki/ dir and home page" {
     echo "" > CONTRIBUTING.md
     echo "" > SECURITY.md
     mkdir test
@@ -55,6 +55,15 @@ teardown() {
     # expect 4 files
     output=$(ls -A1q wiki | wc -l | tr -d ' ')
     assert_equal "$output" "4"
+
+    run grep 'CONTRIBUTING.md' wiki/.README-\(synced\).md 
+    assert_success
+
+    run grep 'SECURITY.md' wiki/.README-\(synced\).md 
+    assert_success
+
+    run grep 'test/README.md' wiki/.README-\(synced\).md 
+    assert_success
 } 
 
 @test "$TEST_PREFIX should NOT include other markdown files in wiki/ dir" {
@@ -64,7 +73,7 @@ echo "" > CONTRIBUTING.md
 
     $SCRIPT_PATH
 
-    # expect 4 files
+    # expect 3 files
     output=$(ls -A1q wiki | wc -l | tr -d ' ')
     assert_equal "$output" "3"
 }
