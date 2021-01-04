@@ -16,8 +16,8 @@ lint_scripts() {
         popd || exit
     fi
 
-    # shellcheck disable=SC2211
-    "$DIR"/../../lib/shellcheck*/shellcheck "$DIR"/../../scripts/**/*.sh
+    
+    "$DIR"/../../lib/shellcheck*/shellcheck `find "$DIR"/../../scripts/**/*.sh -name '*.sh'`
 }
 
 
