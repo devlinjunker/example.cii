@@ -149,7 +149,7 @@ This template includes tests for each of the Bash Scripts that help automate the
 
 Run every BATS test with:
 ```
-lib/bats-core/bin/bats qa/**/*.bats
+lib/bats-core/bin/bats qa -r
 ```
 
 Run a single BATS test with:

@@ -39,6 +39,4 @@ jobs:
         prefix_case_sensitive: true
     
     - name: "Verify BATS Tests Pass"
-      run: 'lib/bats-core/bin/bats "$FILES"'
-      env:
-        FILES: './qa/**/*.bats'
+      run: 'lib/bats-core/bin/bats qa -r'
