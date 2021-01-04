@@ -35,3 +35,6 @@ jobs:
         regex: '(\([\w\s]*\)*\))?:[\w\s]*'
         allowed_prefixes:  ${{ steps.extract_branch.outputs.prefix }}
         prefix_case_sensitive: true
+    
+    - name: "Verify BATS Tests Pass"
+      run: lib/bats-core/bin/bats qa/**/*.bats
