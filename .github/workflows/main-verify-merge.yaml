@@ -29,6 +29,6 @@ jobs:
         allowed_prefixes:  release,patch
 
     - name: "Verify BATS Tests Pass"
-      run: lib/bats-core/bin/bats "$FILES"
-      with:
-        FILES: ./qa/**/*.bats
+      run: 'lib/bats-core/bin/bats "$FILES"'
+      env:
+        FILES: './qa/**/*.bats'
