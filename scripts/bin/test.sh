@@ -3,11 +3,11 @@
 DIR=`dirname $0`
 
 find_script_test() {
-    "$DIR"/../lib/bats-core/bin/bats "$@"
+    "$DIR"/../../lib/bats-core/bin/bats "$@"
 }
 
 all_script_tests() {
-    "$DIR"/../lib/bats-core/bin/bats "$DIR" -r
+    "$DIR"/../../lib/bats-core/bin/bats "$DIR"/../../qa/ -r
 }
 
 main() {

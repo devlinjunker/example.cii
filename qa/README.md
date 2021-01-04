@@ -8,7 +8,7 @@ For now this includes:
  - unit tests with BATS for script files
 
 ## Test Running Script
-This directory also contains a script file (`runner.sh`) that manages running all of the test files. This will either:
+The `scripts/bin/` directory also contains a script file (`test.sh`) that manages running all of the test files. This will either:
  - run all tests if no arguments are passed (or `-a/--all`)
  - or will try to find a specific file to run with the `-f/--file` argument
 
