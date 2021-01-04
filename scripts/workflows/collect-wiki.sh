@@ -16,7 +16,7 @@ OTHER_FILES=("./CONTRIBUTING.md" "./SECURITY.md")
 
 for f in ${OTHER_FILES[*]}
 do
-    if [ ! -f $f ]; then
+    if [ ! -f "$f" ]; then
         echo "Error: could not find $f"
         exit 1
     fi
@@ -29,6 +29,7 @@ do
 done
 
 # find files in repo with README in name
+# shellcheck disable=SC2035,SC2061
 README_FILES=$( find . -name *README* );
 
 for f in ${README_FILES[*]}

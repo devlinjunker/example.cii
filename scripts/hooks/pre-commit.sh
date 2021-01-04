@@ -18,13 +18,14 @@ BRANCH_PROTECTION_ERROR=" ! No commits on this branch   "
 main() {
 
   # Call branch protection script
-  if [ "$($DIR/branch-protections.sh)" -ne 0 ]; then
+  if ! $DIR/branch-protections.sh; then
     echo "$(tput setaf 1)$(tput setab 7)$BRANCH_PROTECTION_ERROR$(tput sgr 0)"
     return 1
   fi
 
   # Call branch name script
-  if [ "$($DIR/branch-name.sh)" -ne 0 ]; then
+  
+  if ! $DIR/branch-name.sh; then
     echo "$(tput setaf 1)$(tput setab 7)$BRANCH_NAME_ERROR$(tput sgr 0)"
     echo "  <prefix>/<description>"
     echo "prefix options: ($($DIR/prefix-list.sh))"

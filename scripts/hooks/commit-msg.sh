@@ -18,7 +18,7 @@ COMMIT_MSG_ERROR=" ! Invalid commit message  "
 
 main() {
 
-  COMMIT_MSG=$(cat "$1" | sed -n "/^[^#]/p")
+  COMMIT_MSG=$(sed -n "/^[^#]/p" "$1")
   FIRST_LINE=$(echo "$COMMIT_MSG" | sed -n "/[^\w]*$/p" | sed "s/^ *//" | sed "s/\n//" | head)
 
   # COMMIT_WORD_COUNT=`cat $1 | sed -n "/^[^#]/p" | wc -w | sed "s/\w//"`

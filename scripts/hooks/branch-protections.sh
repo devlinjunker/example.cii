@@ -15,6 +15,7 @@ github() {
     
     # shellcheck disable=SC2076
     if [[  $URL =~ "github.com" ]]; then
+      # shellcheck disable=SC2034,SC2207
       SPLIT=( $(echo "$URL" | sed "s/.*://" | sed  "s/\.git$//" | sed "s/\// /" ) )
       #OWNER=${SPLIT[0]}
       #REPO=${SPLIT[1]}

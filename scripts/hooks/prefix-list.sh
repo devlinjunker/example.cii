@@ -9,6 +9,7 @@ DIR=$(dirname "$0")
 main() {
 
   # get allowed names from labels.yaml
+  # shellcheck disable=SC2207
   LABEL_TYPES=( $(less "$DIR"/../../.github/labels.yaml | sed -n "/name/p" | sed "s/- name: \"//" | sed "s/\"//" | sed -n "/^[a-z]*$/p") )
 
   # merge labels.yaml with hardcoded
@@ -20,7 +21,7 @@ main() {
 
 ## For BATS testing
 mock() {
-  echo $BATS_PREFIX_LIST
+  echo "$BATS_PREFIX_LIST"
 }
 
 if [ -z "$BATS_PREFIX_LIST" ]; then

@@ -15,7 +15,7 @@ BRANCH_NAME_ERROR=" !  Branch name does not match conventions  "
 main() {
 
   # Call branch name script
-  if [ "$($DIR/branch-name.sh)" -ne 0 ]; then
+  if ! $DIR/branch-name.sh; then
     echo "$(tput setaf 1)$(tput setab 7)$BRANCH_NAME_ERROR$(tput sgr 0)"
     echo "  <prefix>/<description>"
     echo "prefix options: ($($DIR/prefix-list.sh -o))"
