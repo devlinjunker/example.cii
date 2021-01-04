@@ -17,7 +17,7 @@ lint_scripts() {
     fi
 
     # shellcheck disable=SC2211
-    "$DIR"/../../lib/shellcheck*/shellcheck `find "$DIR"/../../scripts/**/*.sh -name '*.sh'`
+    "$DIR"/../../lib/shellcheck*/shellcheck $(find "$DIR"/../../scripts/**/*.sh -name '*.sh')
 }
 
 
