@@ -80,8 +80,10 @@ Break down how each folder is used in the repo and how different code file types
 |-- workflows/
 |---- (Github workflow .yaml files)
 |-- (other github specific files)
-- img/
-|-- (project image files)
+- qa/
+|-- scripts/
+|---- files specific to testing the script files (BATS)
+|-- (other testing files should be stored in here)
 - scripts/
 |-- hooks/
 |---- (Git Hooks Scripts)
@@ -156,13 +158,6 @@ Run a single BATS test with:
 ```
 lib/bats-core/bin/bats <path to .bats file>
 ```
-
-Other ideas to consider for testing:
- - integration tests
- - e2e tests
- - automation tests
- - contract tests
- - mutation tests
 
 
 #### Release 
