@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DIR=`dirname $0`
+DIR=$(dirname "$0")
 
 find_script_test() {
     "$DIR"/../../lib/bats-core/bin/bats "$@"
