@@ -85,6 +85,8 @@ Break down how each folder is used in the repo and how different code file types
 |---- files specific to testing the script files (BATS)
 |-- (other testing files should be stored in here)
 - scripts/
+|-- bin/
+|---- (Scripts for developers to run the project)
 |-- hooks/
 |---- (Git Hooks Scripts)
 |-- release/
