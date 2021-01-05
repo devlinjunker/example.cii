@@ -1,7 +1,12 @@
 name: PR Landmine
 
 on:
-  pull_request
+  pull_request:
+    types: 
+      - opened
+      - edited
+      - reopened
+      - synchronize
   issue_comment:
     types: [created]
 
