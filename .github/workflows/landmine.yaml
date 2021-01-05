@@ -2,6 +2,8 @@ name: PR Landmine
 
 on:
   pull_request
+  issue_comment:
+    types: [created]
 
 jobs:
   landmine:
