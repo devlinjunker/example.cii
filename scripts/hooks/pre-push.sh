@@ -35,7 +35,7 @@ main() {
     return 1;
   fi
 
-  git stash pop;
+  git stash pop || true;
 }
 
 main
