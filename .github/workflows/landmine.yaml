@@ -15,6 +15,6 @@ jobs:
     - name: PR Landmine
       uses: tylermurry/github-pr-landmine@v1
       with:
-        token: ${{ github.PAT }}
+        token: ${{ github.token }}
         test-command: ./scripts/bin/test.sh
 
