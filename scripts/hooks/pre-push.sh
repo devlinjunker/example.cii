@@ -22,6 +22,14 @@ main() {
     return 1;
   fi
 
+  if ! $DIR/../bin/lint.sh; then
+    return 1;
+  fi
+
+
+  if ! $DIR/../bin/test.sh; then
+    return 1;
+  fi
 }
 
 main
