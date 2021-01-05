@@ -60,7 +60,7 @@ See full details in the Github Semver Project [wiki](https://github.com/devlinju
 - [Code of Conduct]
 - [Contributing Guide]
 - [Security Policy]
-<!-- - [Wiki] -->
+- [Wiki]
 - External
   - [Core Infrastructure Initiative Criteria]
   - [BATS]
