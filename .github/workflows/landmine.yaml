@@ -3,7 +3,7 @@ name: PR Landmine
 on:
   pull_request:
     types:
-      - comment
+      - pull_request_review
 
 jobs:
   landmine:
