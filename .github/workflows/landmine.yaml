@@ -23,5 +23,5 @@ jobs:
       uses: tylermurry/github-pr-landmine@v1
       with:
         token: ${{ github.token }}
-        test-command: exit ./scripts/bin/test.sh
+        test-command: ./scripts/bin/test.sh
 
