@@ -22,7 +22,7 @@ main() {
     return 1;
   fi
 
-  git stash save -k "githook uncommitted changes";
+  git stash save -k "githook uncommitted changes" > /dev/null;
 
   if ! $DIR/../bin/lint.sh; then
     git stash pop;
