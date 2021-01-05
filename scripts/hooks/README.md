@@ -20,7 +20,9 @@ Git hooks need to be added to your local repo for each project,
    - enforces that first line of commit message matches conventional commit (ish) style `<type>:<description>`
 
    ### pre-push
-   - enforces that the branch name matches style: `<prefix>/<feature_name>`
+   - enforces that the branch name matches style: <prefix>/<feature_name>
+   - runs `scripts/bin/lint.sh` to lint before pushing
+   - runs `scripts/bin/test.sh` to require unit tests pass before pushing
 
    ### post-commit
    - warns when changes are getting large since "last merge"
