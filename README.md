@@ -99,5 +99,5 @@ See full details in the Github Semver Project [wiki](https://github.com/devlinju
 [Git-mkver]: https://idc101.github.io/git-mkver/
 [BATS]: https://bats-core.readthedocs.io/
 [ShellCheck]: https://www.shellcheck.net/
-[GitHub Semver Project]: https://github.com/devlinjunker/template.github.semver
+[GitHub Semver Project]: https://github.com/devlinjunker/template.github.semver#intro
 [PR Landmine Action]: https://github.com/tylermurry/github-pr-landmine
