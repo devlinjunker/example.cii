@@ -34,11 +34,11 @@ Git hooks need to be added to your local repo for each project,
 
 ## Ideas for Hooks
 
- - Ensure Program Compiles before commit
- - Run tests before commit
+ - [x] Ensure Program Compiles before commit
+ - [x] Run tests before commit
    - only if code files touched?
    - only run tests affected by code files modified?
- - Prevent Commit based on Github Branch protections
+ - [x] Prevent Commit based on Github Branch protections
    - requires reading from github API
      - https://docs.github.com/en/free-pro-team@latest/rest/reference/repos#get-branch-protection
      - use curl and `-u` flag to retrieve branches protected
