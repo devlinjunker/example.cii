@@ -1,4 +1,7 @@
-# Name should reflect when action occurs
+## This Action verifieds that PRs against 'develop' branch can be merged
+##  - Do not allow branches with `poc/` or `wip/` to be merged
+##  - Ensure PR title matches the branch prefix
+
 name: Develop-Verify Merge
 
 on: 
@@ -15,8 +18,6 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      with:
-        submodules: 'recursive'
 
     - name: Prevent POC/WIP branches
       run: |
@@ -37,9 +38,3 @@ jobs:
         regex: '(\([\w\s]*\)*\))?:[\w\s]*'
         allowed_prefixes:  ${{ steps.extract_branch.outputs.prefix }}
         prefix_case_sensitive: true
-    
-    - name: "Verify BATS Tests Pass"
-      run: 'scripts/bin/test.sh'
-
-    - name: "Lint with Shellcheck"
-      run: 'scripts/bin/lint.sh'

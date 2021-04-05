@@ -9,13 +9,12 @@
 
 # set directory for calling other scripts
 # NOTE: expect this to be called in this directory
-DIR=$(dirname "$0")
-
+DIR=$(dirname "${BASH_SOURCE[0]}")
 
 main() {
 
   # get current branch name
-  branch="$(git rev-parse --abbrev-ref HEAD)"
+  local branch="$(git rev-parse --abbrev-ref HEAD)"
 
   # ignore `patch-*` branches
   if [[ $branch =~ patch-[0-9]+.[0-9]+.[0-9]+ ]]; then
@@ -23,15 +22,15 @@ main() {
   fi 
 
   # get prefixes from shared list
-  PREFIXES=$("$DIR"/prefix-list.sh)
+  local PREFIXES=`$DIR/prefix-list.sh`
 
   # create regexp for branch names
-  regexp="^(${PREFIXES[*]// /|})\/[A-Za-z0-9._\-]+$"
+  local regexp="^($(echo "${PREFIXES[@]}" | sed "s/ /|/g"))\/[A-Za-z0-9._\-]+$"
 
   # check that current branch matches regexp
   if [[ ! $branch =~ $regexp ]]; then
     # error if not found in list
-    return 1
+    return -1
   fi
 
 }

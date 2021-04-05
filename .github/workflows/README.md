@@ -25,8 +25,6 @@ This directory contains files related to Github configurations and actions:
   - Runs the verify-merge.sh script in `scripts/` directory and fails the action if the script does not complete succesfully
     - Prevents mergin branches with name `poc` or where last commit contains `wip` 
   - Verifies that Pull Request Title matches branch prefix
-  - Runs BATS tests and errors if they fail
-  - Lints the shell script files with Shellcheck
 
   ### Cut `release-*` Branch Action (release-cut.yaml)
   - Verifies `feature` commits have been added to `develop` since last release cut
@@ -36,8 +34,6 @@ This directory contains files related to Github configurations and actions:
   ### Verify `main` Merge Action (main-verify-merge.yaml)
   - Verifies that Pull Request Title is correct format `release-*` or `hotfix-*`
   - Verifies that Pull Request branch is `release-*` or `hotfix-*` branch
-  - Runs BATS tests and errors if they fail
-  - Lints the shell script files with Shellcheck
 
   ### On Merge to `main` Action (main-on-merge.yaml)
   - Syncs README.md files to wiki
@@ -48,14 +44,13 @@ This directory contains files related to Github configurations and actions:
   ### Cut `patch-*` Branch Action (patch-cut.yaml)
   - Creates a new `patch-*` branch off of `main`, using the last tag to determine hotfix branch number and next version number
 
-  ### PR Landmine Action (landmine.yaml)
-  - Runs when comment on PR, starting with :bomb: and containing [suggestion syntax](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request#adding-line-comments-to-a-pull-request)
-    - Suggestion should check if tests will catch error caused by change 
-    - If the suggestion is bad, you should be able to edit the suggestion and comment on the thread to re-run the action
+  ### On Merge to `release-*` action (release-on-merge.yaml)
+  - Creates new Release Tag and Github Release on `relesae-*` branch
 
 
 ## Ideas
   - [x] pr mutation testing: https://github.com/tylermurry/github-pr-landmine
+    - This is a Github App that is enabled in each repo
   - [x] build docs on merge to `main`
   - [ ] build artifacts on release (merge to `main`)
   - [ ] run build/compile in `develop-verify-merge.yaml` to ensure PR is valid
