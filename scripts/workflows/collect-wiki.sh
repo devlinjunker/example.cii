@@ -14,6 +14,10 @@ OTHER_FILES=("./CONTRIBUTING.md" "./SECURITY.md")
 
 for f in "${OTHER_FILES[@]}"
 do
+    if [ ! -f "$f" ]; then
+        echo "Error: could not find $f"
+        exit 1
+    fi
     echo $f; # print file name so we can see the files being copied in workflow logs
     # rename each to `_<directory>_README` and place in `wiki/` directory 
     wiki_name=$(echo $f | sed "s/^\.\///" | sed "s/^\.//" | sed "s/^/_/" | sed "s/\//_/g" | sed "s/\.md$/_README.md/")
@@ -31,6 +35,9 @@ for f in ${README_FILES[@]}
 do
     echo $f; # print file name so we can see the files being copied in workflow logs
     if [ "$f" = "./README.md" ]; then continue; fi
+    
+    # ignore wiki directory so we don't copy it again
+    if [[ "$f" =~ wiki/.* ]]; then continue; fi
     
     # rename each to `_<directory>_README` and place in `wiki/` directory 
     wiki_name=$(echo $f | sed "s/^\.\///" | sed "s/^\.//" | sed "s/^/_/" | sed "s/\//_/g")

@@ -18,4 +18,13 @@ main() {
 
 }
 
-main
+## For BATS testing
+mock() {
+  echo "$BATS_PREFIX_LIST"
+}
+
+if [ -z "$BATS_PREFIX_LIST" ]; then
+  main
+else
+  mock
+fi
