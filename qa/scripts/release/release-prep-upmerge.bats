@@ -23,8 +23,6 @@ teardown() {
 @test "$TEST_PREFIX should call git and merge main into develop" {
     run "$SCRIPT_DIR"/release-prep-upmerge.sh main
 
-    echo $BATS_TMPDIR
-
     first=$(sed '1q;d' $BATS_TMPDIR/git.args)
     second=$(sed '2q;d' $BATS_TMPDIR/git.args)
     third=$(sed '3q;d' $BATS_TMPDIR/git.args)
