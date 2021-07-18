@@ -54,3 +54,14 @@ TEST_PREFIX="pre-push.sh -";
     unset BATS_PREFIX_LIST
     assert_success
 }
+
+@test "$TEST_PREFIX should run lint and test" {
+    skip
+    echo "TODO"
+} 
+
+@test "$TEST_PREFIX should not run lint or test if 'wip' branch" {
+    skip
+    echo "TODO"
+}
+
