@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -e
+
 OTHER_TYPES=( 'feat' 'fix' 'bugfix' 'perf' 'test' )
 
 # set directory for calling other scripts
