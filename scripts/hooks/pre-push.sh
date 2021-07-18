@@ -22,20 +22,25 @@ main() {
     return 1;
   fi
 
-  git stash save -k "githook uncommitted changes" > /dev/null;
+  # Test if last commit message starts with `wip`
+  message=$(git log --pretty=format:"%s" -1)
 
-  if ! $DIR/../bin/lint.sh; then
-    git stash pop;
-    return 1;
+  if [[ "$message" != "wip"* ]]; then
+    git stash save -k "githook uncommitted changes" > /dev/null;
+
+    if ! $DIR/../bin/lint.sh; then
+      git stash pop;
+      return 1;
+    fi
+
+
+    if ! $DIR/../bin/test.sh; then
+      git stash pop;
+      return 1;
+    fi
+
+    git stash pop || true;
   fi
-
-
-  if ! $DIR/../bin/test.sh; then
-    git stash pop;
-    return 1;
-  fi
-
-  git stash pop || true;
 }
 
 main
