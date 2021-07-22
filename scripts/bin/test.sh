@@ -1,5 +1,8 @@
 #! /bin/bash
 
+# cannot `set -u` here because `if [[ -z "$BATS_TMPDIR" ]];` errors
+set -e
+
 DIR=$(dirname "$0")
 
 find_script_test() {
