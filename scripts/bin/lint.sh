@@ -1,6 +1,8 @@
 #! /bin/bash
 
 # cannot `set -u` here because `if [[ -z "$BATS_TMPDIR" ]];` errors
+## if we enforce bash version 4.2 then we can use `if [ -v BATS_TMPDIR ]` to check
+## and then can `set -u` here 
 set -e
 
 DIR=$(dirname "$0")
