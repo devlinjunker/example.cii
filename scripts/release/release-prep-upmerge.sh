@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -eu
+
 git checkout develop;
 
 # Get version in `develop` (We wantt this to be version in the final README)
@@ -7,7 +9,7 @@ git checkout develop;
 
 # upmerge from branch input
 git pull;
-git merge "$1";
+git merge "$1" 2>/dev/null; # ignore error we expect here
 
 # TODO: Resolve conflicts better (maybe https://github.com/jakub-g/git-resolve-conflict)
 git reset README.md;
