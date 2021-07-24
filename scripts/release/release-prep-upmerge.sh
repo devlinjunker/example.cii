@@ -9,7 +9,7 @@ git checkout develop;
 
 # upmerge from branch input
 git pull;
-git merge "$1";
+git merge "$1" 2>/dev/null; # ignore error we expect heres
 
 # TODO: Resolve conflicts better (maybe https://github.com/jakub-g/git-resolve-conflict)
 git reset README.md;

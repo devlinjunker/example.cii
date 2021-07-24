@@ -9,6 +9,8 @@ on:
   push:
     branches:
       - release-*
+    paths-ignore:
+    - 'README.md' # ignore changes to README as we edit this when creating release branch
 
 jobs:
   create-release-tag:
