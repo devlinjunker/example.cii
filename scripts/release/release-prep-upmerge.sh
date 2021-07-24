@@ -1,6 +1,7 @@
 #! /bin/bash
 
-set -eu
+# cannot do `set -e` here as we expect an conflict error during the merge
+set -u
 
 git checkout develop;
 
@@ -9,7 +10,7 @@ git checkout develop;
 
 # upmerge from branch input
 git pull;
-git merge "$1" 2>/dev/null; # ignore error we expect here
+git merge "$1"; 
 
 # TODO: Resolve conflicts better (maybe https://github.com/jakub-g/git-resolve-conflict)
 git reset README.md;
